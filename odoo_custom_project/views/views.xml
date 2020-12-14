@@ -1,0 +1,312 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view"
+            id="vkp_project_ext.form">
+            <field name="name">vkp_project_ext_form</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id"
+                ref="project.edit_project"/>
+            <field name="arch"
+                type="xml">
+                <xpath expr="//div[@name='button_box']"
+                       position="inside">
+                    <button class="oe_stat_button"
+                            type="object"
+                            name="action_invoice"
+                            icon="fa-adn">
+                        <div class="o_stat_info">
+                            <field name="invoice_count"
+                                   class="o_stat_value"/>
+                            <span class="o_stat_text">Invoices</span>
+                        </div>
+                    </button>
+                </xpath>
+
+                <xpath expr="//header"
+                       position="inside">
+                    <field name="project_stage_id"
+                           widget="statusbar"
+                           options="{'clickable': '1', 'fold_field': 'fold'}"/>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="required">0</attribute>
+                    <attribute name="edit">0</attribute>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="replace"/>
+                <xpath expr="//field[@name='user_id']" position="before">
+                    <field name="partner_id" required="1" attrs="{'readonly': [('id', '!=', False)]}"/>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="before">
+                    <field name="create_date" string="Дата створення" />
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="int_reference" attrs="{'readonly': [('id', '!=', False)]}"/>
+                    <field name="title_of_works" string="Назва робіт" required="1"
+                    attrs="{'readonly': [('id', '!=', False)]}"/>
+                    <field name="project_partner_id"/>
+                </xpath>
+                <xpath expr="//field[@name='user_id']"
+                    position="attributes">
+                    <attribute name="string">Менеджер проекту</attribute>
+                </xpath>
+                <xpath expr="//field[@name='user_id']"
+                    position="after">
+                    <field name="input_lang"/>
+                    <field name="practice_ids"
+                           widget="many2many_tags"/>
+                    <field name="date_start" invisible="1"/>
+                    <field name="date_end" invisible="1"/>
+                    <field name="budget_diff"
+                        invisible="1"/>
+                    <field name="email_budget_sent"
+                        invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='privacy_visibility']"
+                    position="after">
+                    <field name="budget"
+                        required="1"
+                        attrs="{'invisible': [('type_payments', 'not in', ['fixed_price', 'fixed_month_payment', 'cap'])]}"/>
+                    <field name="paymant_currency_id"/>
+                    <field name="used_budget"
+                        attrs="{'invisible': [('type_payments', 'not in', ['fixed_price', 'fixed_month_payment', 'cap'])]}"
+                        widget='monetary'
+                        options="{'currency_field': 'paymant_currency_id', 'field_digits': True}"/>
+                    <field name="fixed_rate"
+                        attrs="{'invisible': [('type_payments', '!=', 'fixed_bid')]}"/>
+                    <field name="type_payments"/>
+                    <field name="in_cancel_stage"
+                        invisible="1"/>
+                    <field name="cancel_reasons"
+                        attrs="{'invisible':[('in_cancel_stage','!=',True)]}"/>
+                    <field name="need_check"/>
+                </xpath>
+                <xpath expr="//group[@name='misc']" position="before">
+                    <notebook>
+                        <page name="extra_info"
+                            string="Description and other">
+                            <group>
+                                <group>
+                                    <field name="date_in_progres"/>
+                                </group>
+                                <group>
+                                    <field name="date_finish"/>
+                                </group>
+                            </group>
+                            <group>
+                                <field name="in_new_stage"
+                                    invisible="1"/>
+                                <field name="exclude_from_report"
+                                    attrs="{'invisible':[('in_new_stage','!=',True)]}"/>
+                                <field name="description"/>
+                                <field name="condition"/>
+                            </group>
+                        </page>
+                        <page name="project_team"
+                            string="Project team">
+                            <field name="project_partner_ids"
+                                context='{"default_project_id": active_id}'>
+                                <tree editable="bottom">
+                                    <field name="project_id"
+                                        invisible="1"/>
+                                    <field name="partner_id"/>
+                                    <field name="project_type_payments" invisible="1"/>
+                                    <field name="currency_id"
+                                           attrs="{'readonly': [('project_type_payments', 'not in', ['spec_bid', 'fixed_price', 'fixed_month_payment', 'cap'])]}"
+                                           force_save="1"/>
+                                    <field name="rate"
+                                           attrs="{'readonly': [('project_type_payments', 'not in', ['spec_bid', 'fixed_price', 'fixed_month_payment', 'cap'])]}"
+                                           force_save="1"/>
+                                </tree>
+                            </field>
+                        </page>
+
+                    </notebook>
+                </xpath>
+                <xpath expr="//field[@name='privacy_visibility']"
+                    position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//group[@name='misc']"
+                    position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record model="ir.ui.view"
+            id="project_type_form_view">
+            <field name="name">Project Stages form</field>
+            <field name="model">project.type</field>
+            <field name="arch"
+                type="xml">
+                <form string="Project Stage" create="0" delete="0">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="fold"/>
+                                <field name="sequence"
+                                    groups="base.group_no_one"/>
+                            </group>
+                        </group>
+                        <group string="Stage Description and Tooltips">
+                            <p class="text-muted"
+                                colspan="2">
+                                At each stage employees can block or make Project ready for next stage.
+                                You can define here labels that will be displayed for the state instead
+                                of the default labels.
+                            </p>
+                            <p class="text-muted"
+                                colspan="2">
+                                You can also add a description to help your coworkers understand the meaning and purpose
+                                of the stage.
+                            </p>
+                            <field name="description"
+                                placeholder="Add a description..."
+                                nolabel="1"
+                                colspan="2"/>
+                        </group>
+                        <group>
+                            <field name="in_progres_trace" string='Trace date In Progres'/>
+                            <field name="end_data_trace" string='Trace date Finish'/>
+                            <field name="cancel_stage" string='Cancel stage'/>
+                            <field name="new_stage" string='For Potential'/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="open_project_type_form"
+            model="ir.actions.act_window">
+            <field name="name">Project Stages</field>
+            <field name="res_model">project.type</field>
+            <field name="help"
+                type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new stage for Projects
+                </p>
+            </field>
+        </record>
+
+        <record id="project_type_tree"
+            model="ir.ui.view">
+            <field name="name">Project Stages tree</field>
+            <field name="model">project.type</field>
+            <field name="arch"
+                type="xml">
+                <tree string="Project Stage" create="0" edit="0" delete="0">
+                    <field name="sequence"
+                        widget="handle"
+                        groups="base.group_no_one"/>
+                    <field name="name"/>
+                    <field name="fold"/>
+                    <field name="description"/>
+                    <field name="in_progres_trace"/>
+                    <field name="end_data_trace"/>
+                    <field name="cancel_stage"/>
+                </tree>
+            </field>
+        </record>
+
+        <menuitem action="open_project_type_form"
+            id="menu_project_config_project"
+            name="Project Stages"
+            parent="project.menu_project_config"/>
+
+        <record id="kanban_view_projects"
+            model="ir.ui.view">
+            <field name="model">project.project</field>
+            <field name="inherit_id"
+                ref="project.view_project_kanban"/>
+            <field name="arch"
+                type="xml">
+                <xpath expr="//field[@name='name']"
+                    position="before">
+                    <field name="project_stage_id"
+                        options='{"group_by_tooltip": {"description": "Description"}}' create="0" edit="0" delete="0"/>
+                </xpath>
+
+                <xpath expr="//kanban"
+                    position="attributes">
+                    <attribute name="default_group_by">project_stage_id</attribute>
+                    <attribute name="group_create">false</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record id="project.open_view_project_all"
+            model="ir.actions.act_window">
+            <field name="name">Projects</field>
+            <field name="res_model">project.project</field>
+<!--            <field name="view_type">form</field>-->
+            <field name="domain">[]</field>
+            <field name="view_mode">kanban,form,tree</field>
+            <field name="view_id"
+                ref="project.view_project_kanban"/>
+            <field name="search_view_id"
+                ref="project.view_project_project_filter"/>
+            <field name="target">main</field>
+            <field name="help"
+                type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new project
+                </p>
+                <p>
+                    Or <a type="action"
+                    name="%(project.ir_actions_server_project_sample)d"
+                    tabindex="-1">activate a sample project</a> to play with.
+                </p>
+            </field>
+        </record>
+
+            <record id="vkp_project_ext_tree" model="ir.ui.view">
+            <field name="name">vkp_project_ext_tree</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.view_project"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="date_start" string="Дата сворення"/>
+                    <field name="type_payments" string="Тип оплати" />
+                    <field name="project_partner_id" string="Партнер"/>
+                    <field name="practice_ids" widget="many2many_tags" string="Практика"/>
+                    <field name="project_stage_id"/>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="attributes">
+                    <attribute name="string">Клієнт</attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="project.open_create_project" model="ir.actions.act_window">
+            <field name="name">Create a Project</field>
+            <field name="res_model">project.project</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="project.edit_project"/>
+            <field name="target">new</field>
+        </record>
+
+        <record id="project.open_view_project_all" model="ir.actions.act_window">
+            <field name="name">Projects</field>
+            <field name="res_model">project.project</field>
+            <field name="domain">[]</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="view_id" ref="vkp_project_ext.vkp_project_ext_tree"/>
+            <field name="search_view_id" ref="project.view_project_project_filter"/>
+            <field name="target">main</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new project
+                </p><p>
+                    Or <a type="action" name="%(project.ir_actions_server_project_sample)d" tabindex="-1">activate a sample project</a> to play with.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

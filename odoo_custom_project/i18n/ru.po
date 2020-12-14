@@ -1,0 +1,305 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* vkp_project_ext
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-12 11:56+0000\n"
+"PO-Revision-Date: 2020-09-12 11:56+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: vkp_project_ext
+#: model_terms:ir.ui.view,arch_db:vkp_project_ext.project_type_form_view
+msgid "Add a description..."
+msgstr "Добавить описание ..."
+
+#. module: vkp_project_ext
+#: model_terms:ir.ui.view,arch_db:vkp_project_ext.project_type_form_view
+msgid ""
+"At each stage employees can block or make Project ready for next stage.\n"
+"                                You can define here labels that will be displayed for the state instead\n"
+"                                of the default labels."
+msgstr "На каждом этапе сотрудники могут заблокировать проект или подготовить его к следующему этапу."
+
+#. module: vkp_project_ext
+#: model:ir.model.fields.selection,name:vkp_project_ext.selection__project_project__type_payments__cap
+msgid "CAP"
+msgstr "CAP"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_project__cancel_reasons
+msgid "Cancel reason"
+msgstr "Причины отмены"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_type__cancel_stage
+#: model_terms:ir.ui.view,arch_db:vkp_project_ext.project_type_form_view
+msgid "Cancel stage"
+msgstr "Этап Отмены"
+
+#. module: vkp_project_ext
+#: model_terms:ir.actions.act_window,help:vkp_project_ext.open_project_type_form
+msgid "Create a new stage for Projects"
+msgstr "Создайте новый этап для проектов"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_type__create_uid
+#: model:ir.model.fields,field_description:vkp_project_ext.field_vkp_project_team__create_uid
+msgid "Created by"
+msgstr "Создано"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_type__create_date
+#: model:ir.model.fields,field_description:vkp_project_ext.field_vkp_project_team__create_date
+msgid "Created on"
+msgstr "Создано на"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_project__date_end
+msgid "Date end"
+msgstr "Дата конца"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_project__date_finish
+msgid "Date in 'Finish'"
+msgstr "Дата перехода в 'Завершен'"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_project__date_in_progres
+msgid "Date in 'In progress'"
+msgstr "Дата перехода в 'В работе'"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_project__date_start
+msgid "Date start"
+msgstr "Дата начала"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_project__description
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_type__description
+msgid "Description"
+msgstr "Описание"
+
+#. module: vkp_project_ext
+#: model_terms:ir.ui.view,arch_db:vkp_project_ext.form
+msgid "Description and other"
+msgstr "Описание и другое"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_type__display_name
+#: model:ir.model.fields,field_description:vkp_project_ext.field_vkp_project_team__display_name
+msgid "Display Name"
+msgstr "Имя"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields.selection,name:vkp_project_ext.selection__project_project__type_payments__fixed_bid
+msgid "Fixed bid"
+msgstr "Фиксированая ставка"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields.selection,name:vkp_project_ext.selection__project_project__type_payments__fixed_month_payment
+msgid "Fixed monthly payment"
+msgstr "Фиксированая месячная плата"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields.selection,name:vkp_project_ext.selection__project_project__type_payments__fixed_price
+msgid "Fixed price"
+msgstr "Фиксированая цена"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_project__fixed_rate
+msgid "Fixed rate"
+msgstr "Фиксированый тариф"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_type__fold
+msgid "Скрытый в Канбан"
+msgstr ""
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_type__id
+#: model:ir.model.fields,field_description:vkp_project_ext.field_vkp_project_team__id
+msgid "ID"
+msgstr ""
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_project__input_lang
+msgid "Language filling"
+msgstr "Язык заполнения"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_type____last_update
+#: model:ir.model.fields,field_description:vkp_project_ext.field_vkp_project_team____last_update
+msgid "Last Modified on"
+msgstr "Последнее изменение"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_type__write_uid
+#: model:ir.model.fields,field_description:vkp_project_ext.field_vkp_project_team__write_uid
+msgid "Last Updated by"
+msgstr "Последнее обновление:"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_type__write_date
+#: model:ir.model.fields,field_description:vkp_project_ext.field_vkp_project_team__write_date
+msgid "Последнее обновление"
+msgstr ""
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_project__need_check
+msgid "Partner invoice approve"
+msgstr "Подтверждение счетов Партнером"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_project__paymant_currency_id
+msgid "Payment currency"
+msgstr "Валюта платежа"
+
+#. module: vkp_project_ext
+#: model:ir.model,name:vkp_project_ext.model_project_project
+#: model:ir.model.fields,field_description:vkp_project_ext.field_vkp_project_team__project_id
+msgid "Project"
+msgstr "Проект"
+
+#. module: vkp_project_ext
+#: model:ir.model,name:vkp_project_ext.model_project_type
+#: model_terms:ir.ui.view,arch_db:vkp_project_ext.project_type_form_view
+#: model_terms:ir.ui.view,arch_db:vkp_project_ext.project_type_tree
+msgid "Project Stage"
+msgstr "Этапы проекта"
+
+#. module: vkp_project_ext
+#: model:ir.actions.act_window,name:vkp_project_ext.open_project_type_form
+#: model:ir.ui.menu,name:vkp_project_ext.menu_project_config_project
+msgid "Project Stages"
+msgstr "Этапы проекта"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_project__budget
+msgid "Project budget"
+msgstr "Бюджет проекта"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_project__int_reference
+msgid "Project number"
+msgstr "Номер проекта"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_project__project_partner_id
+#: model:ir.model.fields,field_description:vkp_project_ext.field_vkp_project_team__partner_id
+msgid "Project partner"
+msgstr "Партнер проекта"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_project__project_partner_ids
+#: model_terms:ir.ui.view,arch_db:vkp_project_ext.form
+msgid "Project team"
+msgstr "Команда проекта"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_project__condition
+msgid "Project terms"
+msgstr "Условия проекта"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_vkp_project_team__rate
+msgid "Rate"
+msgstr "Тариф"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_type__sequence
+msgid "Sequence"
+msgstr "Последовательность"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields.selection,name:vkp_project_ext.selection__project_project__type_payments__spec_bid
+msgid "Special bid"
+msgstr "Специальная ставка"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_project__stage_id
+msgid "Stage"
+msgstr "Этап"
+
+#. module: vkp_project_ext
+#: model_terms:ir.ui.view,arch_db:vkp_project_ext.project_type_form_view
+msgid "Stage Description and Tooltips"
+msgstr "Описание этапа и всплывающие подсказки"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_type__name
+msgid "Stage Name"
+msgstr "Имя этапа"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields.selection,name:vkp_project_ext.selection__project_project__type_payments__standard_bid
+msgid "Standart bid"
+msgstr "Стандартная ствака"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,help:vkp_project_ext.field_project_type__fold
+msgid ""
+"Этот этап сворачивается в представлении канбан, когда в нем нет записей. "
+"этап для показа."
+msgstr ""
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_type__end_data_trace
+#: model_terms:ir.ui.view,arch_db:vkp_project_ext.project_type_form_view
+msgid "Trace date Finish"
+msgstr "Отслеживать дату Завершения"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_type__in_progres_trace
+#: model_terms:ir.ui.view,arch_db:vkp_project_ext.project_type_form_view
+msgid "Trace date In Progres"
+msgstr "Отслеживать дату 'В работе'"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_project__type_payments
+msgid "Type payment"
+msgstr "Тип платежа"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_project__used_budget
+msgid "Used budget"
+msgstr "Использование бюджета"
+
+#. module: vkp_project_ext
+#: model:ir.model,name:vkp_project_ext.model_vkp_project_team
+msgid "Vkp Project Team"
+msgstr ""
+
+#. module: vkp_project_ext
+#: model_terms:ir.ui.view,arch_db:vkp_project_ext.project_type_form_view
+msgid ""
+"You can also add a description to help your coworkers understand the meaning and purpose\n"
+"                                of the stage."
+msgstr ""
+
+#. module: vkp_project_ext
+#: model:ir.model.fields.selection,name:vkp_project_ext.selection__project_project__input_lang__eng
+msgid "english"
+msgstr "english"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields,field_description:vkp_project_ext.field_project_project__in_cancel_stage
+msgid "in_cancel_stage"
+msgstr ""
+
+#. module: vkp_project_ext
+#: model:ir.model.fields.selection,name:vkp_project_ext.selection__project_project__input_lang__rus
+msgid "russian"
+msgstr "русский"
+
+#. module: vkp_project_ext
+#: model:ir.model.fields.selection,name:vkp_project_ext.selection__project_project__input_lang__ukr
+msgid "ukrainian"
+msgstr "украинский"

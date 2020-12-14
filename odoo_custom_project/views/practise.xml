@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="practice_form_view" model="ir.ui.view">
+            <field name="name">practice.practice.form</field>
+            <field name="model">practice.practice</field>
+            <field name="arch" type="xml">
+                <form string="Practice">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="practice_tree_view" model="ir.ui.view">
+            <field name="name">practice.practice.tree</field>
+            <field name="model">practice.practice</field>
+            <field name="arch" type="xml">
+                <tree string="ModelTitle">
+                    <field name="name"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+<!--        <record id="practice_search_view" model="ir.ui.view">-->
+<!--            <field name="name">practice.practice.search</field>-->
+<!--            <field name="model">practice.practice</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <search string="ModelTitle">-->
+<!--                    <group expand="1" string="Group By">-->
+<!--                        <filter string="Example Field" name="example_field" domain="[]"-->
+<!--                                context="{'group_by':'example_field'}"/>-->
+<!--                    </group>-->
+<!--                </search>-->
+<!--            </field>-->
+<!--        </record>-->
+
+        <record id="practice_act_window" model="ir.actions.act_window">
+            <field name="name">Practice</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">practice.practice</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new Practice.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Practices" id="practice_config_menu" parent="project.menu_project_config" action="practice_act_window"/>
+        <menuitem action="open_project_type_form"
+                  id="menu_project_config_project"
+                  name="Project Stages"
+                  parent="project.menu_project_config"/>
+
+    </data>
+</odoo>

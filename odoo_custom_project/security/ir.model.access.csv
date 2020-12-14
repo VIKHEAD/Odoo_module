@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_vkp_project_team_user,vkp_project_team,model_vkp_project_team,project.group_project_user,1,1,1,1
+access_vkp_project_team_manager,vkp_project_team_man,model_vkp_project_team,project.group_project_manager,1,1,1,1
+access_project_type_user,project_type,model_project_type,project.group_project_user,1,1,1,1
+access_project_practise_user,practice_practice,model_practice_practice,project.group_project_user,1,1,1,1

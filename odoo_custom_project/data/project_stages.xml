@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="project_type_new" model="project.type">
+            <field name="name">Потенціний проект</field>
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="project_type_progress" model="project.type">
+            <field name="name">В роботі</field>
+            <field name="in_progres_trace">False</field>
+            <field name="sequence">20</field>
+        </record>
+
+        <record id="project_type_finish" model="project.type">
+            <field name="name">Закінчено</field>
+            <field name="end_data_trace">False</field>
+            <field name="sequence">30</field>
+        </record>
+
+        <record id="project_type_cancel" model="project.type">
+            <field name="name">Відмінено</field>
+            <field name="cancel_stage">False</field>
+            <field name="sequence">40</field>
+        </record>
+
+    </data>
+</odoo>
